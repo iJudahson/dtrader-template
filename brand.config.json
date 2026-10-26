@@ -1,14 +1,14 @@
 {
-    "brand_name": "Kings FX",
+    "brand_name": "KingsFX",
     "brand_logo": "brand/platform-logo.svg",
     "brand_logo_dark": "brand/platform-logo.svg",
-    "brand_domain": "https://www.kingsfx.site",
+    "brand_domain": "kingsfx.site",
     "brand_hostname": {
-        "staging": "staging.dtrader-template.pages.dev",
-        "production": "dtrader-template.pages.dev"
+        "staging": "1089",
+        "production": "34MbJ9dej1Nr4nQy7Shi7"
     },
     "platform": {
-        "name": "Kings FX",
+        "name": "KingsFX",
         "description": "A whole new trading experience on a powerful yet easy to use platform.",
         "logo": "brand/platform-logo.svg",
         "home_url": "https://home.deriv.com/dashboard",
@@ -23,8 +23,8 @@
         "production": "https://dtrader-template.pages.dev/transfer"
     },
     "auth": {
-        "staging": "https://staging-auth.deriv.com",
-        "production": "https://auth.deriv.com",
+        "staging": "https://www.kingsfx.site",
+        "production": "https://www.kingsfx.site",
         "oauth_scopes": ["trade", "account_manage"],
         "oauth_redirect_uri_staging": "https://staging.dtrader-template.pages.dev",
         "oauth_redirect_uri_production": "https://dtrader-template.pages.dev",
