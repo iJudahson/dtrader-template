@@ -5,14 +5,14 @@
  * @param {Object} attributes: all the attributes to assign, e.g. { id: '...', class: '...', html: '...', ... }
  * @return the created DOM element
  */
-const createElement = (tag_name, attributes = {}) => {
+export const createElement = (tag_name, attributes = {}) => {
     const el = document.createElement(tag_name);
     Object.keys(attributes).forEach(attr => {
         const value = attributes[attr];
         if (attr === 'text') {
             el.textContent = value;
         } else if (attr === 'html') {
-            el.html(value);
+            el.innerHTML = value; // Fixed from el.html(value) to native innerHTML
         } else {
             el.setAttribute(attr, value);
         }
@@ -21,7 +21,7 @@ const createElement = (tag_name, attributes = {}) => {
 };
 
 let static_hash;
-const getStaticHash = () => {
+export const getStaticHash = () => {
     static_hash =
         static_hash || (document.querySelector('script[src*="main"]').getAttribute('src') || '').split('.')[1];
     return static_hash;
@@ -63,31 +63,21 @@ const eu_countries = [
 ];
 // TODO: [duplicate_code] - Move this to shared package
 // check if client is from EU
-const isEuCountry = country => eu_countries.includes(country);
+export const isEuCountry = country => eu_countries.includes(country);
 // countries where synthetics are not offered
 const countries_without_synthetics = ['sg', 'de', 'gr', 'es', 'au', 'it', 'lu'];
 // check if synthetics are offered based on country
-const isSyntheticsUnavailable = country => countries_without_synthetics.includes(country);
+export const isSyntheticsUnavailable = country => countries_without_synthetics.includes(country);
 // countries where binary options are blocked
 const blocked_options_countries = ['au', 'fr'];
-const isOptionsBlocked = country => blocked_options_countries.includes(country);
+export const isOptionsBlocked = country => blocked_options_countries.includes(country);
 // countries where only multipliers are offered
 const multipliers_only_countries = ['de', 'es', 'it', 'lu', 'gr', 'au', 'fr'];
-const isMultipliersOnly = country => multipliers_only_countries.includes(country);
+export const isMultipliersOnly = country => multipliers_only_countries.includes(country);
 
-const getRegion = (landing_company_shortcode, residence) => {
+export const getRegion = (landing_company_shortcode, residence) => {
     if (landing_company_shortcode === 'virtual') {
         return isEuCountry(residence) ? 'eu' : 'row';
     }
     return landing_company_shortcode === 'svg' ? 'row' : 'eu';
-};
-
-module.exports = {
-    createElement,
-    getStaticHash,
-    isEuCountry,
-    isOptionsBlocked,
-    isSyntheticsUnavailable,
-    isMultipliersOnly,
-    getRegion,
 };
