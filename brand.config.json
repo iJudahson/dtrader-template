@@ -4,8 +4,9 @@
     "brand_logo_dark": "brand/platform-logo.svg",
     "brand_domain": "kingsfx.site",
     "brand_hostname": {
-        "staging": "1089",
-        "production": "34MbJ9dej1Nr4nQy7Shi7"
+    "staging": "staging.kingsfx.site",
+    "production": "www.kingsfx.site"
+}
     },
     "platform": {
         "name": "KingsFX",
