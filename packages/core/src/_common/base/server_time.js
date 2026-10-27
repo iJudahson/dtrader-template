@@ -1,5 +1,10 @@
+
 const moment = require('moment');
-const BinarySocket = require('./socket_base').default;
+const BinarySocketModule = require('./socket_base');
+console.log('Socket module exports:', BinarySocketModule);
+console.log('Socket default export:', BinarySocketModule.default);
+console.log('Socket send method:', BinarySocketModule.default?.send);
+const BinarySocket = BinarySocketModule.default;
 const PromiseUtils = require('@deriv-com/utils').PromiseUtils;
 
 const ServerTime = (() => {
