@@ -120,12 +120,18 @@ const BinarySocketBase = (() => {
                 }
             });
 
+            
             deriv_api = new DerivAPIBasic({
                 connection: binary_socket,
                 storage: SocketCache,
                 middleware: new APIMiddleware(config),
             });
+
+            console.log('DerivAPIBasic instance:', deriv_api);
+            console.log('DerivAPIBasic send:', typeof deriv_api.send);
+            console.log('DerivAPIBasic methods:', Object.keys(Object.getPrototypeOf(deriv_api) || {}));
         }
+
 
         deriv_api.onOpen().subscribe(() => {
             config.wsEvent('open');
