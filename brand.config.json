@@ -6,7 +6,7 @@
     "brand_hostname": {
     "staging": "staging.kingsfx.site",
     "production": "www.kingsfx.site"
-}
+        
     },
     "platform": {
         "name": "KingsFX",
