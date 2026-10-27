@@ -541,6 +541,8 @@ function delegateToObject(base_obj, extending_obj_getter) {
                 typeof extending_obj_getter === 'function' ? extending_obj_getter() : extending_obj_getter;
 
             if (!extending_obj) return undefined;
+            if (field === 'send') console.log('Proxy delegation check:', !!extending_obj, typeof extending_obj?.send);
+            if (field === 'send') console.log('Proxy target:', target);
 
             const value = extending_obj[field];
             if (value) {
